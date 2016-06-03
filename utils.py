@@ -9,15 +9,24 @@ if not os.path.isdir(DATA_DIR):
     os.system('mkdir %s' % DATA_DIR)
 
 def process_xml(xml, headers):
-    with open('%s/%s-%s-%s.xml' % (DATA_DIR, headers['timestamp'], headers['year'], headers['tournament']), 'w') as writefile:
+
+    FILE_ROOT = '%s/%s-%s-%s-%s' % (
+        DATA_DIR,
+        headers['timestamp'],
+        headers['x-meta-game-id'],
+        headers['year'],
+        headers['tournament']
+    )
+
+    with open('%s.xml' % FILE_ROOT, 'w') as writefile:
         writefile.write(xml)
 
-    with open('%s/%s-%s-%s-headers.json' % (DATA_DIR, headers['timestamp'], headers['year'], headers['tournament']), 'w') as writefile:
+    with open('%s-headers.json' % FILE_ROOT, 'w') as writefile:
         writefile.write(json.dumps(headers))
 
     payload = xml_to_json(xml)
 
-    with open('%s/%s-%s-%s-processed.json' % (DATA_DIR, headers['timestamp'], headers['year'], headers['tournament']), 'w') as writefile:
+    with open('%s-processed.json' % FILE_ROOT, 'w') as writefile:
         writefile.write(json.dumps(payload))
 
 def _flatten_attributes(property_name, lookup, attributes):

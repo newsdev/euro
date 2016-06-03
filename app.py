@@ -14,20 +14,27 @@ app.debug=True
 
 VALID_HEADERS = ['x-meta-feed-type','x-meta-feed-parameters','x-meta-default-filename','x-meta-game-id','x-meta-competiiton-id','x-meta-season-id','x-meta-game-id','x-meta-gamesystem-id','x-meta-matchday','x-meta-game-status','x-meta-language','x-meta-production-server','x-meta-production-server-timeStamp','x-meta-production-server-module','x-meta-mime-type','x-meta-encoding','x-meta-sport-id','x-content-length','x-meta-id','x-feed_id','x-meta-date-created','x-meta-message-digest']
 
-@app.route('/<tournament>/<year>/latest.xml', methods=['GET'])
-def latest_xml(tournament, year):
-    xml_files = sorted(glob.glob('%s/*.xml' % utils.DATA_DIR), key=lambda x:x.split('-')[0])
-    if len(xml_files) > 0:
-        with open(xml_files[0], 'r') as readfile:
+@app.route('/<tournament>/<year>/gameids.json', methods=['GET'])
+def all_gameids(tournament, year):
+    gameids = [x.split('-')[1] for x in glob.glob('%s/*.xml' % utils.DATA_DIR)]
+    return Response(json.dumps(gameids), mimetype="application/json")
+
+@app.route('/<tournament>/<year>/game/<gameid>.xml', methods=['GET'])
+def latest_xml(tournament, year, gameid):
+    xml_files = glob.glob('%s/*-%s-%s-%s.xml' % (utils.DATA_DIR, gameid, year, tournament))
+    files = sorted(xml_files, key=lambda x:x.split('-')[0])
+    if len(files) > 0:
+        with open(files[0], 'r') as readfile:
             return Response(readfile.read(), mimetype="text/xml")
     else:
         return ""
 
-@app.route('/<tournament>/<year>/latest.json', methods=['GET'])
-def latest_json(tournament, year):
-    json_files = sorted(glob.glob('%s/*-processed.json' % utils.DATA_DIR), key=lambda x:x.split('-')[0])
-    if len(json_files) > 0:
-        with open(json_files[0], 'r') as readfile:
+@app.route('/<tournament>/<year>/game/<gameid>.json', methods=['GET'])
+def latest_json(tournament, year, gameid):
+    json_files = glob.glob('%s/*-%s-%s-%s-processed.json' % (utils.DATA_DIR, gameid, year, tournament))
+    files = sorted(json_files, key=lambda x:x.split('-')[0])
+    if len(files) > 0:
+        with open(files[0], 'r') as readfile:
             return Response(json.loads(readfile.read()), mimetype="application/json")
     else:
         return ""
