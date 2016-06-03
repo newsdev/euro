@@ -75,3 +75,4 @@ def setup():
 def deploy():
     pull()
     pip_install()
+    api.run('touch /home/ubuntu/%(project_name)s/app.py' % env)
