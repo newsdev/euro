@@ -34,7 +34,6 @@ def parse_xml(tournament, year):
                 headers[k.lower()] = v
 
         utils.process_xml(xml, headers)
-
         return ""
 
 if __name__ == '__main__':
