@@ -7,7 +7,7 @@ from fabric.state import env
 
 ENVIRONMENTS = {
     "prd": {
-        "hosts": 'campfin.newsdev.net',
+        "hosts": 'ec2-23-21-126-6.compute-1.amazonaws.com',
     }, 
 }
 
@@ -61,6 +61,15 @@ def pull():
 def pip_install():
     api.run('cd /home/ubuntu/%(project_name)s; workon %(project_name)s && pip install -r requirements.txt' % env)
 
+@api.task
+def mkvirtualenv():
+    api.run('mkvirtualenv %(project_name)s' % env)
+
+@api.task
+def setup():
+    clone()
+    mkvirtualenv()
+    pip_install()
 
 @api.task
 def deploy():
