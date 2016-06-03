@@ -41,7 +41,6 @@ def _xml_element_to_json(xml_element, attributes):
         return _flatten_attributes(xml_element.tag, float(xml_element), attributes)
 
     if isinstance(xml_element, objectify.StringElement):
-        print unicode(xml_element).encode('utf8').strip()
         return _flatten_attributes(xml_element.tag, unicode(xml_element).encode('utf8').strip(), attributes)
 
     return _flatten_attributes(xml_element.tag, _xml_to_json(xml_element.getchildren()), attributes)
