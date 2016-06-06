@@ -17,7 +17,7 @@ VALID_HEADERS = ['x-meta-feed-type','x-meta-feed-parameters','x-meta-default-fil
 
 @app.route('/<tournament>/<year>/gameids.json', methods=['GET'])
 def all_gameids(tournament, year):
-    gameids = Set([x.split('-')[1] for x in glob.glob('%s/*F7*.xml' % utils.DATA_DIR)])
+    gameids = list(Set([x.split('-')[2] for x in glob.glob('%s/*F7*.xml' % utils.DATA_DIR)]))
     return Response(json.dumps(gameids), mimetype="application/json")
 
 @app.route('/<tournament>/<year>/file/<filetype>.xml', methods=['GET'])
