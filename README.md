@@ -8,6 +8,8 @@ Euro is a simple web framework for accepting XML files from Opta sports. Current
 
 ####`/<tournament>/<year>/create/`
 
+See [test.php](https://github.com/newsdev/euro/blob/master/test.php) for an example of the kind of data Opta will be POSTing to this endpoint.
+
 ### GET
 
 ####`/<tournament>/<year>/gameids.json`
