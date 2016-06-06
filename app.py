@@ -3,6 +3,7 @@ import datetime
 import glob
 import json
 import os
+from sets import Set
 import time
 
 from flask import Flask, render_template, request, make_response, Response
@@ -14,15 +15,10 @@ app.debug=True
 
 VALID_HEADERS = ['x-meta-feed-type','x-meta-feed-parameters','x-meta-default-filename','x-meta-game-id','x-meta-competiiton-id','x-meta-season-id','x-meta-game-id','x-meta-gamesystem-id','x-meta-matchday','x-meta-game-status','x-meta-language','x-meta-production-server','x-meta-production-server-timeStamp','x-meta-production-server-module','x-meta-mime-type','x-meta-encoding','x-meta-sport-id','x-content-length','x-meta-id','x-feed_id','x-meta-date-created','x-meta-message-digest']
 
-@app.route('/<tournament>/<year>/<filepath>', methods=['GET'])
-def single_file(tournament, year, filepath):
-    xml_files = glob.glob('%s/%s' % filepath)
-    files = sorted(xml_files)
-    if len(files) > 0:
-        with open(files[0], 'r') as readfile:
-            return Response(readfile.read())
-    else:
-        return ""
+@app.route('/<tournament>/<year>/gameids.json', methods=['GET'])
+def all_gameids(tournament, year):
+    gameids = Set([x.split('-')[1] for x in glob.glob('%s/*.xml' % utils.DATA_DIR)])
+    return Response(json.dumps(gameids), mimetype="application/json")
 
 @app.route('/<tournament>/<year>/file/<filetype>.xml', methods=['GET'])
 def xml_file(tournament, year, filetype):
@@ -43,11 +39,6 @@ def json_file(tournament, year, filetype):
             return Response(json.loads(readfile.read()), mimetype="application/json")
     else:
         return ""
-
-@app.route('/<tournament>/<year>/gameids.json', methods=['GET'])
-def all_gameids(tournament, year):
-    gameids = [x.split('-')[1] for x in glob.glob('%s/*.xml' % utils.DATA_DIR)]
-    return Response(json.dumps(gameids), mimetype="application/json")
 
 @app.route('/<tournament>/<year>/game/<gameid>.xml', methods=['GET'])
 def latest_xml(tournament, year, gameid):
