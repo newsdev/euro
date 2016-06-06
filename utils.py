@@ -10,24 +10,46 @@ if not os.path.isdir(DATA_DIR):
 
 def process_xml(xml, headers):
 
-    FILE_ROOT = '%s/%s-%s-%s-%s' % (
-        DATA_DIR,
-        headers['timestamp'],
-        headers['x-meta-game-id'],
-        headers['year'],
-        headers['tournament']
-    )
+    if headers.get('x-meta-game-id', None):
+        FILE_ROOT = '%s/%s-%s-%s-%s-%s' % (
+            DATA_DIR,
+            headers['x-meta-feed-type'],
+            headers['timestamp'],
+            headers['x-meta-game-id'],
+            headers['year'],
+            headers['tournament']
+        )
 
-    with open('%s.xml' % FILE_ROOT, 'w') as writefile:
-        writefile.write(xml)
+        with open('%s.xml' % FILE_ROOT, 'w') as writefile:
+            writefile.write(xml)
 
-    with open('%s-headers.json' % FILE_ROOT, 'w') as writefile:
-        writefile.write(json.dumps(headers))
+        with open('%s-headers.json' % FILE_ROOT, 'w') as writefile:
+            writefile.write(json.dumps(headers))
 
-    payload = xml_to_json(xml)
+        payload = xml_to_json(xml)
 
-    with open('%s-processed.json' % FILE_ROOT, 'w') as writefile:
-        writefile.write(json.dumps(payload))
+        with open('%s-processed.json' % FILE_ROOT, 'w') as writefile:
+            writefile.write(json.dumps(payload))
+
+    else:
+        FILE_ROOT = '%s/%s-%s-%s-%s' % (
+            DATA_DIR,
+            headers['x-meta-feed-type'],
+            headers['timestamp'],
+            headers['year'],
+            headers['tournament']
+        )
+
+        with open('%s.xml' % FILE_ROOT, 'w') as writefile:
+            writefile.write(xml)
+
+        with open('%s-headers.json' % FILE_ROOT, 'w') as writefile:
+            writefile.write(json.dumps(headers))
+
+        payload = xml_to_json(xml)
+
+        with open('%s-processed.json' % FILE_ROOT, 'w') as writefile:
+            writefile.write(json.dumps(payload))
 
 def _flatten_attributes(property_name, lookup, attributes):
     if attributes is None:
