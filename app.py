@@ -14,7 +14,7 @@ app.debug=True
 
 VALID_HEADERS = ['x-meta-feed-type','x-meta-feed-parameters','x-meta-default-filename','x-meta-game-id','x-meta-competiiton-id','x-meta-season-id','x-meta-game-id','x-meta-gamesystem-id','x-meta-matchday','x-meta-game-status','x-meta-language','x-meta-production-server','x-meta-production-server-timeStamp','x-meta-production-server-module','x-meta-mime-type','x-meta-encoding','x-meta-sport-id','x-content-length','x-meta-id','x-feed_id','x-meta-date-created','x-meta-message-digest']
 
-@app.route('/<tournament>/<year>/game/<filetype>.xml', methods=['GET'])
+@app.route('/<tournament>/<year>/file/<filetype>.xml', methods=['GET'])
 def latest_xml(tournament, year, filetype):
     xml_files = glob.glob('%s/%s-*-%s-%s.xml' % (utils.DATA_DIR, filetype, year, tournament))
     files = sorted(xml_files, key=lambda x:x.split('-')[0])
@@ -24,7 +24,7 @@ def latest_xml(tournament, year, filetype):
     else:
         return ""
 
-@app.route('/<tournament>/<year>/game/<filetype>.json', methods=['GET'])
+@app.route('/<tournament>/<year>/file/<filetype>.json', methods=['GET'])
 def latest_json(tournament, year, filetype):
     json_files = glob.glob('%s/%s-*-%s-%s-processed.json' % (utils.DATA_DIR, filetype, year, tournament))
     files = sorted(json_files, key=lambda x:x.split('-')[0])
