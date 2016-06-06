@@ -36,7 +36,7 @@ def json_file(tournament, year, filetype):
     files = sorted(json_files, key=lambda x:x.split('-')[1])
     if len(files) > 0:
         with open(files[0], 'r') as readfile:
-            return Response(json.loads(readfile.read()), mimetype="application/json")
+            return Response(readfile.read(), mimetype="application/json")
     else:
         return ""
 
@@ -55,8 +55,9 @@ def latest_json(tournament, year, gameid):
     json_files = glob.glob('%s/*-%s-%s-%s-processed.json' % (utils.DATA_DIR, gameid, year, tournament))
     files = sorted(json_files, key=lambda x:x.split('-')[1])
     if len(files) > 0:
+        print files[0]
         with open(files[0], 'r') as readfile:
-            return Response(json.loads(readfile.read()), mimetype="application/json")
+            return Response(readfile.read(), mimetype="application/json")
     else:
         return ""
 

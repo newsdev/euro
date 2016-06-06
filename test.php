@@ -6,351 +6,406 @@
 
 //set xml request
     $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2001-2015 Opta Sportsdata Ltd. All rights reserved. -->
+<!-- Copyright 2001-2016 Opta Sportsdata Ltd. All rights reserved. -->
 
 <!-- PRODUCTION HEADER
      produced on:        valde-jobq-a03.nexus.opta.net
-     production time:    20150414T230725,519Z
+     production time:    20160531T223116,532Z
      production module:  Opta::Feed::XML::Soccer::F7
 -->
-<SoccerFeed TimeStamp="20150415T000723+0100">
-  <SoccerDocument Type="Latest" uID="f790722">
-    <Competition uID="c420">
-      <Country>Copa Libertadores</Country>
-      <Name>Copa Libertadores</Name>
-      <Round>
-        <Name>Round</Name>
-        <Pool>3</Pool>
-        <RoundNumber>2</RoundNumber>
-      </Round>
-      <Stat Type="season_id">2014</Stat>
-      <Stat Type="season_name">Season 2014/2015</Stat>
-      <Stat Type="symid">SUD_CL</Stat>
-      <Stat Type="matchday">7</Stat>
+<SoccerFeed TimeStamp="20160531T233112+0100">
+  <SoccerDocument Type="Result" uID="f828754">
+    <Competition uID="c21">
+      <Country>Italy</Country>
+      <Name>Italian Serie A</Name>
+      <Stat Type="season_id">2015</Stat>
+      <Stat Type="season_name">Season 2015/2016</Stat>
+      <Stat Type="symid">IT_SA</Stat>
+      <Stat Type="matchday">38</Stat>
     </Competition>
     <MatchData>
-      <MatchInfo MatchType="Regular" Period="SecondHalf" TimeStamp="20150415T000515+0100">
-        <Date>20150414T230000+0100</Date>
+      <MatchInfo MatchType="Regular" Period="FullTime" TimeStamp="20160514T214412+0100" Weather="Rain">
+        <Attendance>14213</Attendance>
+        <Date>20160514T194500+0100</Date>
+        <Result Type="NormalResult" Winner="t2182" />
       </MatchInfo>
-      <MatchOfficial uID="o42817">
+      <MatchOfficial uID="o40663">
         <OfficialData>
           <OfficialRef Type="Main" />
         </OfficialData>
         <OfficialName>
-          <First>Patricio</First>
-          <Last>Polic</Last>
+          <First>Andrea</First>
+          <Last>Gervasoni</Last>
         </OfficialName>
       </MatchOfficial>
-      <Stat Type="match_time">48</Stat>
-      <Stat Type="first_half_start">20151504T230039</Stat>
-      <Stat Type="first_half_time">49</Stat>
-      <Stat Type="first_half_stop">20151504T234841</Stat>
-      <Stat Type="second_half_start">20151604T000515</Stat>
-      <TeamData Score="2" Side="Home" TeamRef="t2578">
-        <Goal EventID="336245350" EventNumber="1151" Period="FirstHalf" PlayerRef="p169785" Time="15" TimeStamp="20150414T231449+0100" Type="Goal" uID="g2578-1">
-          <Assist PlayerRef="p170798">p170798</Assist>
+      <AssistantOfficials>
+        <AssistantOfficial FirstName="Francesco" LastName="De Luca" Type="Lineman 1" uID="o40682" />
+        <AssistantOfficial FirstName="Valentino" LastName="Fiorito" Type="Lineman 2" uID="o42939" />
+        <AssistantOfficial FirstName="Salvatore" LastName="Longo" Type="Fourth official" uID="o41547" />
+      </AssistantOfficials>
+      <Stat Type="match_time">92</Stat>
+      <Stat Type="first_half_start">20160514T195113+0100</Stat>
+      <Stat Type="first_half_time">47</Stat>
+      <Stat Type="first_half_stop">20160514T203726+0100</Stat>
+      <Stat Type="second_half_start">20160514T205715+0100</Stat>
+      <Stat Type="second_half_time">47</Stat>
+      <Stat Type="second_half_stop">20160514T214411+0100</Stat>
+      <TeamData Score="3" Side="Home" TeamRef="t2182">
+        <Booking Card="Yellow" CardType="Yellow" EventID="108812590" EventNumber="1311" Period="FirstHalf" PlayerRef="p14715" Reason="Foul" Time="31" TimeStamp="20160514T202116+0100" uID="b2182-1" />
+        <Booking Card="Yellow" CardType="Yellow" EventID="1717658802" EventNumber="2662" Period="SecondHalf" PlayerRef="p116056" Reason="Off the ball foul" Time="66" TimeStamp="20160514T211813+0100" uID="b2182-2" />
+        <Booking Card="Yellow" CardType="Yellow" EventID="567015172" EventNumber="2853" Period="SecondHalf" PlayerRef="p7379" Reason="Foul" Time="85" TimeStamp="20160514T213644+0100" uID="b2182-3" />
+        <Goal EventID="1474122762" EventNumber="165" Period="FirstHalf" PlayerRef="p153776" Time="6" TimeStamp="20160514T195649+0100" Type="Goal" uID="g2182-1">
+          <Assist PlayerRef="p95215">p95215</Assist>
         </Goal>
-        <Goal EventID="629124152" EventNumber="1262" Period="FirstHalf" PlayerRef="p169785" Time="26" TimeStamp="20150414T232554+0100" Type="Goal" uID="g2578-2">
-          <Assist PlayerRef="p151542">p151542</Assist>
+        <Goal EventID="2052429062" EventNumber="1266" Period="FirstHalf" PlayerRef="p184441" Time="26" TimeStamp="20160514T201637+0100" Type="Goal" uID="g2182-2">
+          <Assist PlayerRef="p116056">p116056</Assist>
+          <SecondAssist PlayerRef="p153776">p153776</SecondAssist>
+        </Goal>
+        <Goal EventID="2080999713" EventNumber="1397" Period="FirstHalf" PlayerRef="p153776" Time="39" TimeStamp="20160514T202926+0100" Type="Goal" uID="g2182-3">
+          <Assist PlayerRef="p42886">p42886</Assist>
         </Goal>
         <PlayerLineUp>
-          <MatchPlayer PlayerRef="p59933" Position="Goalkeeper" ShirtNumber="1" Status="Start" />
-          <MatchPlayer PlayerRef="p86267" Position="Defender" ShirtNumber="15" Status="Start" />
-          <MatchPlayer PlayerRef="p103287" Position="Defender" ShirtNumber="2" Status="Start" />
-          <MatchPlayer Captain="1" PlayerRef="p52479" Position="Defender" ShirtNumber="25" Status="Start" />
-          <MatchPlayer PlayerRef="p60636" Position="Defender" ShirtNumber="21" Status="Start" />
-          <MatchPlayer PlayerRef="p170798" Position="Midfielder" ShirtNumber="8" Status="Start" />
-          <MatchPlayer PlayerRef="p54765" Position="Midfielder" ShirtNumber="18" Status="Start" />
-          <MatchPlayer PlayerRef="p76735" Position="Midfielder" ShirtNumber="5" Status="Start" />
-          <MatchPlayer PlayerRef="p170782" Position="Midfielder" ShirtNumber="10" Status="Start" />
-          <MatchPlayer PlayerRef="p151542" Position="Midfielder" ShirtNumber="27" Status="Start" />
-          <MatchPlayer PlayerRef="p169785" Position="Striker" ShirtNumber="9" Status="Start" />
-          <MatchPlayer PlayerRef="p85988" Position="Substitute" ShirtNumber="11" Status="Sub" SubPosition="Forward" />
-          <MatchPlayer PlayerRef="p55628" Position="Substitute" ShirtNumber="16" Status="Sub" SubPosition="Midfielder" />
-          <MatchPlayer PlayerRef="p86021" Position="Substitute" ShirtNumber="22" Status="Sub" SubPosition="Goalkeeper" />
-          <MatchPlayer PlayerRef="p169938" Position="Substitute" ShirtNumber="19" Status="Sub" SubPosition="Defender" />
-          <MatchPlayer PlayerRef="p179353" Position="Substitute" ShirtNumber="14" Status="Sub" SubPosition="Midfielder" />
-          <MatchPlayer PlayerRef="p205137" Position="Substitute" ShirtNumber="28" Status="Sub" SubPosition="Forward" />
-          <MatchPlayer PlayerRef="p6259" Position="Substitute" ShirtNumber="30" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p18500" Position="Goalkeeper" ShirtNumber="47" Status="Start" />
+          <MatchPlayer PlayerRef="p38476" Position="Defender" ShirtNumber="13" Status="Start" />
+          <MatchPlayer PlayerRef="p42886" Position="Defender" ShirtNumber="23" Status="Start" />
+          <MatchPlayer PlayerRef="p7379" Position="Defender" ShirtNumber="28" Status="Start" />
+          <MatchPlayer PlayerRef="p84178" Position="Defender" ShirtNumber="15" Status="Start" />
+          <MatchPlayer Captain="1" PlayerRef="p14715" Position="Midfielder" ShirtNumber="4" Status="Start" />
+          <MatchPlayer PlayerRef="p184441" Position="Midfielder" ShirtNumber="6" Status="Start" />
+          <MatchPlayer PlayerRef="p116056" Position="Midfielder" ShirtNumber="32" Status="Start" />
+          <MatchPlayer PlayerRef="p153776" Position="Striker" ShirtNumber="16" Status="Start" />
+          <MatchPlayer PlayerRef="p95215" Position="Striker" ShirtNumber="92" Status="Start" />
+          <MatchPlayer PlayerRef="p81033" Position="Striker" ShirtNumber="17" Status="Start" />
+          <MatchPlayer PlayerRef="p53207" Position="Substitute" ShirtNumber="1" Status="Sub" SubPosition="Goalkeeper" />
+          <MatchPlayer PlayerRef="p21140" Position="Substitute" ShirtNumber="8" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p87843" Position="Substitute" ShirtNumber="3" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p7485" Position="Substitute" ShirtNumber="79" Status="Sub" SubPosition="Goalkeeper" />
+          <MatchPlayer PlayerRef="p19731" Position="Substitute" ShirtNumber="7" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p107853" Position="Substitute" ShirtNumber="29" Status="Sub" SubPosition="Forward" />
+          <MatchPlayer PlayerRef="p105131" Position="Substitute" ShirtNumber="5" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p76100" Position="Substitute" ShirtNumber="9" Status="Sub" SubPosition="Forward" />
         </PlayerLineUp>
+        <Substitution EventID="854682309" EventNumber="2518" Period="2" Reason="Injury" SubOff="p95215" SubOn="p76100" SubstitutePosition="4" Time="51" TimeStamp="20160514T210245+0100" uID="s2182-1" />
+        <Substitution EventID="669928781" EventNumber="2749" Period="2" Reason="Tactical" SubOff="p184441" SubOn="p19731" SubstitutePosition="3" Time="74" TimeStamp="20160514T212541+0100" uID="s2182-2" />
+        <Substitution EventID="1706413862" EventNumber="28010" Period="2" Reason="Injury" SubOff="p153776" SubOn="p21140" SubstitutePosition="3" Time="80" TimeStamp="20160514T213203+0100" uID="s2182-3" />
       </TeamData>
-      <TeamData Score="0" Side="Away" TeamRef="t764">
+      <TeamData Score="1" Side="Away" TeamRef="t127">
+        <Booking Card="Yellow" CardType="Yellow" EventID="1542223804" EventNumber="12211" Period="FirstHalf" PlayerRef="p152590" Reason="Foul" Time="22" TimeStamp="20160514T201246+0100" uID="b127-1" />
+        <Booking Card="Yellow" CardType="Yellow" EventID="948557353" EventNumber="25512" Period="SecondHalf" PlayerRef="p94425" Reason="Dissent" Time="55" TimeStamp="20160514T210647+0100" uID="b127-2" />
+        <Booking Card="Yellow" CardType="Yellow" EventID="12709381" EventNumber="25913" Period="SecondHalf" PlayerRef="p107117" Reason="Foul" Time="59" TimeStamp="20160514T211110+0100" uID="b127-3" />
+        <Booking Card="Red" CardType="StraightRed" EventID="1687177617" EventNumber="25914" Period="SecondHalf" PlayerRef="p107117" Reason="Foul and Abusive Language" Time="59" TimeStamp="20160514T211113+0100" uID="b127-4" />
+        <Booking Card="Yellow" CardType="Yellow" EventID="1011102831" EventNumber="26615" Period="SecondHalf" PlayerRef="p91990" Reason="Foul" Time="66" TimeStamp="20160514T211803+0100" uID="b127-5" />
+        <Goal EventID="1534966399" EventNumber="13119" Period="FirstHalf" PlayerRef="p20153" Time="31" TimeStamp="20160514T202210+0100" Type="Goal" uID="g127-1">
+          <Assist PlayerRef="p94425">p94425</Assist>
+        </Goal>
         <PlayerLineUp>
-          <MatchPlayer Captain="1" PlayerRef="p53408" Position="Goalkeeper" ShirtNumber="1" Status="Start" />
-          <MatchPlayer PlayerRef="p37733" Position="Defender" ShirtNumber="26" Status="Start" />
-          <MatchPlayer PlayerRef="p50037" Position="Defender" ShirtNumber="3" Status="Start" />
-          <MatchPlayer PlayerRef="p122779" Position="Defender" ShirtNumber="21" Status="Start" />
-          <MatchPlayer PlayerRef="p134317" Position="Defender" ShirtNumber="22" Status="Start" />
-          <MatchPlayer PlayerRef="p53394" Position="Midfielder" ShirtNumber="8" Status="Start" />
-          <MatchPlayer PlayerRef="p53649" Position="Midfielder" ShirtNumber="25" Status="Start" />
-          <MatchPlayer PlayerRef="p148034" Position="Midfielder" ShirtNumber="10" Status="Start" />
-          <MatchPlayer PlayerRef="p61081" Position="Midfielder" ShirtNumber="15" Status="Start" />
-          <MatchPlayer PlayerRef="p61289" Position="Midfielder" ShirtNumber="5" Status="Start" />
-          <MatchPlayer PlayerRef="p91993" Position="Striker" ShirtNumber="9" Status="Start" />
-          <MatchPlayer PlayerRef="p179163" Position="Substitute" ShirtNumber="29" Status="Sub" SubPosition="Defender" />
-          <MatchPlayer PlayerRef="p61846" Position="Substitute" ShirtNumber="27" Status="Sub" SubPosition="Defender" />
-          <MatchPlayer PlayerRef="p53409" Position="Substitute" ShirtNumber="12" Status="Sub" SubPosition="Goalkeeper" />
-          <MatchPlayer PlayerRef="p95712" Position="Substitute" ShirtNumber="17" Status="Sub" SubPosition="Midfielder" />
-          <MatchPlayer PlayerRef="p102458" Position="Substitute" ShirtNumber="20" Status="Sub" SubPosition="Forward" />
-          <MatchPlayer PlayerRef="p162760" Position="Substitute" ShirtNumber="19" Status="Sub" SubPosition="Forward" />
-          <MatchPlayer PlayerRef="p168786" Position="Substitute" ShirtNumber="18" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p42947" Position="Goalkeeper" ShirtNumber="30" Status="Start" />
+          <MatchPlayer PlayerRef="p91990" Position="Defender" ShirtNumber="5" Status="Start" />
+          <MatchPlayer PlayerRef="p107117" Position="Defender" ShirtNumber="24" Status="Start" />
+          <MatchPlayer PlayerRef="p152590" Position="Defender" ShirtNumber="12" Status="Start" />
+          <MatchPlayer PlayerRef="p39826" Position="Defender" ShirtNumber="33" Status="Start" />
+          <MatchPlayer PlayerRef="p88754" Position="Midfielder" ShirtNumber="7" Status="Start" />
+          <MatchPlayer PlayerRef="p94425" Position="Midfielder" ShirtNumber="77" Status="Start" />
+          <MatchPlayer PlayerRef="p19801" Position="Midfielder" ShirtNumber="83" Status="Start" />
+          <MatchPlayer Captain="1" PlayerRef="p20153" Position="Striker" ShirtNumber="8" Status="Start" />
+          <MatchPlayer PlayerRef="p28502" Position="Striker" ShirtNumber="23" Status="Start" />
+          <MatchPlayer PlayerRef="p50442" Position="Striker" ShirtNumber="10" Status="Start" />
+          <MatchPlayer PlayerRef="p55604" Position="Substitute" ShirtNumber="21" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p78407" Position="Substitute" ShirtNumber="55" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p173033" Position="Substitute" ShirtNumber="92" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p178885" Position="Substitute" ShirtNumber="28" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p192294" Position="Substitute" ShirtNumber="34" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p194827" Position="Substitute" ShirtNumber="97" Status="Sub" SubPosition="Forward" />
+          <MatchPlayer PlayerRef="p199829" Position="Substitute" ShirtNumber="27" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p204222" Position="Substitute" ShirtNumber="99" Status="Sub" SubPosition="Forward" />
+          <MatchPlayer PlayerRef="p41293" Position="Substitute" ShirtNumber="11" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p215531" Position="Substitute" ShirtNumber="98" Status="Sub" SubPosition="Goalkeeper" />
+          <MatchPlayer PlayerRef="p220874" Position="Substitute" ShirtNumber="96" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p225776" Position="Substitute" ShirtNumber="29" Status="Sub" SubPosition="Defender" />
         </PlayerLineUp>
-        <Substitution EventID="758385181" EventNumber="2455" Period="2" Reason="Tactical" SubOff="p61289" SubOn="p168786" SubstitutePosition="3" Time="45" TimeStamp="20150415T000511+0100" uID="s764-1" />
+        <Substitution EventID="1723691516" EventNumber="27020" Period="2" Reason="Injury" SubOff="p88754" SubOn="p78407" SubstitutePosition="2" Time="70" TimeStamp="20160514T212138+0100" uID="s127-1" />
+        <Substitution EventID="124653308" EventNumber="27221" Period="2" Reason="Tactical" SubOff="p42947" SubOn="p215531" SubstitutePosition="1" Time="72" TimeStamp="20160514T212353+0100" uID="s127-2" />
+        <Substitution EventID="1315911624" EventNumber="28122" Period="2" Reason="Tactical" SubOff="p20153" SubOn="p178885" SubstitutePosition="2" Time="81" TimeStamp="20160514T213309+0100" uID="s127-3" />
       </TeamData>
     </MatchData>
-    <Team uID="t2578">
-      <Country>Argentina</Country>
-      <Name>Huracán</Name>
-      <Player Position="Goalkeeper" uID="p59933">
+    <Team uID="t2182">
+      <Country>Italy</Country>
+      <Name>Sassuolo</Name>
+      <Player Position="Goalkeeper" uID="p18500">
         <PersonName>
-          <First>Marcos</First>
-          <Last>Díaz</Last>
+          <First>Andrea</First>
+          <Last>Consigli</Last>
         </PersonName>
       </Player>
-      <Player Position="Defender" uID="p86267">
-        <PersonName>
-          <First>Luciano</First>
-          <Last>Balbi</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Defender" uID="p103287">
+      <Player Position="Defender" uID="p38476">
         <PersonName>
           <First>Federico</First>
-          <Last>Mancinelli</Last>
+          <Last>Peluso</Last>
         </PersonName>
       </Player>
-      <Player Position="Defender" uID="p52479">
+      <Player Position="Defender" uID="p42886">
         <PersonName>
-          <First>Eduardo</First>
-          <Last>Domínguez</Last>
+          <First>Marcello</First>
+          <Last>Gazzola</Last>
         </PersonName>
       </Player>
-      <Player Position="Defender" uID="p60636">
+      <Player Position="Defender" uID="p7379">
         <PersonName>
-          <First>Hugo</First>
-          <Last>Nervo</Last>
+          <First>Paolo</First>
+          <Last>Cannavaro</Last>
         </PersonName>
       </Player>
-      <Player Position="Midfielder" uID="p170798">
+      <Player Position="Defender" uID="p84178">
         <PersonName>
-          <First>Lucas</First>
-          <Last>Villarruel</Last>
+          <First>Francesco</First>
+          <Last>Acerbi</Last>
         </PersonName>
       </Player>
-      <Player Position="Midfielder" uID="p54765">
+      <Player Position="Midfielder" uID="p14715">
         <PersonName>
-          <First>Patricio</First>
-          <Last>Toranzo</Last>
+          <First>Francesco</First>
+          <Last>Magnanelli</Last>
         </PersonName>
       </Player>
-      <Player Position="Midfielder" uID="p76735">
+      <Player Position="Midfielder" uID="p184441">
         <PersonName>
-          <First>Federico</First>
-          <Last>Vismara</Last>
+          <First>Lorenzo</First>
+          <Last>Pellegrini</Last>
         </PersonName>
       </Player>
-      <Player Position="Midfielder" uID="p170782">
+      <Player Position="Midfielder" uID="p116056">
         <PersonName>
-          <First>Alejandro</First>
-          <Last>Romero Gamarra</Last>
+          <First>Alfred</First>
+          <Last>Duncan</Last>
         </PersonName>
       </Player>
-      <Player Position="Midfielder" uID="p151542">
+      <Player Position="Striker" uID="p153776">
         <PersonName>
-          <First>Edson</First>
-          <Last>Puch</Last>
+          <First>Matteo</First>
+          <Last>Politano</Last>
         </PersonName>
       </Player>
-      <Player Position="Striker" uID="p169785">
+      <Player Position="Striker" uID="p95215">
         <PersonName>
-          <First>Ramon</First>
-          <Last>Ábila</Last>
+          <First>Gregoire</First>
+          <Last>Defrel</Last>
         </PersonName>
       </Player>
-      <Player Position="Substitute" uID="p85988">
+      <Player Position="Striker" uID="p81033">
         <PersonName>
-          <First>Agustín</First>
-          <Last>Torassa</Last>
+          <First>Nicola</First>
+          <Last>Sansone</Last>
         </PersonName>
       </Player>
-      <Player Position="Substitute" uID="p55628">
+      <Player Position="Substitute" uID="p53207">
         <PersonName>
-          <First>Iván</First>
-          <Last>Moreno y Fabianesi</Last>
+          <First>Alberto</First>
+          <Last>Pomini</Last>
         </PersonName>
       </Player>
-      <Player Position="Substitute" uID="p86021">
+      <Player Position="Substitute" uID="p21140">
         <PersonName>
-          <First>Matías</First>
-          <Last>Giordano</Last>
+          <First>Davide</First>
+          <Last>Biondini</Last>
         </PersonName>
       </Player>
-      <Player Position="Substitute" uID="p169938">
+      <Player Position="Substitute" uID="p87843">
         <PersonName>
-          <First>Santiago</First>
-          <Last>Echeverría</Last>
+          <First>Alessandro</First>
+          <Last>Longhi</Last>
         </PersonName>
       </Player>
-      <Player Position="Substitute" uID="p179353">
+      <Player Position="Substitute" uID="p7485">
         <PersonName>
-          <First>Ezequiel</First>
-          <Last>Gallegos</Last>
+          <First>Gianluca</First>
+          <Last>Pegolo</Last>
         </PersonName>
       </Player>
-      <Player Position="Substitute" uID="p205137">
+      <Player Position="Substitute" uID="p19731">
         <PersonName>
-          <First>Lucas</First>
-          <Last>Campana</Last>
+          <First>Simone</First>
+          <Last>Missiroli</Last>
         </PersonName>
       </Player>
-      <Player Position="Substitute" uID="p6259">
+      <Player Position="Substitute" uID="p107853">
         <PersonName>
-          <First>Daniel</First>
-          <Last>Montenegro</Last>
+          <First>Marcello</First>
+          <Last>Trotta</Last>
         </PersonName>
       </Player>
-      <TeamOfficial Type="Manager" uID="man43344">
+      <Player Position="Substitute" uID="p105131">
         <PersonName>
-          <First>Néstor</First>
-          <Last>Apuzzo</Last>
+          <First>Luca</First>
+          <Last>Antei</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p76100">
+        <PersonName>
+          <First>Diego</First>
+          <Last>Falcinelli</Last>
+        </PersonName>
+      </Player>
+      <TeamOfficial Type="Manager" uID="man38012">
+        <PersonName>
+          <First>Eusebio</First>
+          <Last>Di Francesco</Last>
         </PersonName>
       </TeamOfficial>
     </Team>
-    <Team uID="t764">
-      <Country>Brazil</Country>
-      <Name>Cruzeiro</Name>
-      <Player Position="Goalkeeper" uID="p53408">
+    <Team uID="t127">
+      <Country>Italy</Country>
+      <Name>Internazionale</Name>
+      <Player Position="Goalkeeper" uID="p42947">
         <PersonName>
-          <First>Fábio Deivson</First>
-          <Known>Fábio</Known>
-          <Last>Lopes Maciel</Last>
+          <First>Juan Pablo</First>
+          <Last>Carrizo</Last>
         </PersonName>
       </Player>
-      <Player Position="Defender" uID="p37733">
+      <Player Position="Defender" uID="p91990">
         <PersonName>
-          <First>Paulo André</First>
-          <Known>Paulo André</Known>
-          <Last>Cren Benini</Last>
+          <First>Juan Guilherme</First>
+          <Known>Juan Jesus</Known>
+          <Last>Nunes Jesus</Last>
         </PersonName>
       </Player>
-      <Player Position="Defender" uID="p50037">
+      <Player Position="Defender" uID="p107117">
         <PersonName>
-          <First>Leonardo Renan</First>
-          <Known>Léo</Known>
-          <Last>Simões de Lacerda</Last>
+          <First>Jeison</First>
+          <Last>Murillo</Last>
         </PersonName>
       </Player>
-      <Player Position="Defender" uID="p122779">
+      <Player Position="Defender" uID="p152590">
         <PersonName>
-          <First>Eugenio</First>
-          <Last>Mena</Last>
+          <First>Alex Nicolao</First>
+          <Known>Alex Telles</Known>
+          <Last>Telles</Last>
         </PersonName>
       </Player>
-      <Player Position="Defender" uID="p134317">
+      <Player Position="Defender" uID="p39826">
         <PersonName>
-          <First>Mayke</First>
-          <Known>Mayke</Known>
-          <Last>Rocha de Oliveira</Last>
+          <First>Danilo</First>
+          <Last>D\'Ambrosio</Last>
         </PersonName>
       </Player>
-      <Player Position="Midfielder" uID="p53394">
+      <Player Position="Midfielder" uID="p88754">
         <PersonName>
-          <First>Henrique</First>
-          <Known>Henrique</Known>
-          <Last>Pacheco Lima</Last>
+          <First>Geoffrey</First>
+          <Last>Kondogbia</Last>
         </PersonName>
       </Player>
-      <Player Position="Midfielder" uID="p53649">
-        <PersonName>
-          <First>Willian</First>
-          <Known>Willian</Known>
-          <Last>Gomes de Siqueira</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Midfielder" uID="p148034">
-        <PersonName>
-          <First>Giorgian</First>
-          <Last>de Arrascaeta</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Midfielder" uID="p61081">
-        <PersonName>
-          <First>Willian Roberto</First>
-          <Known>Willian Farias</Known>
-          <Last>Farias</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Midfielder" uID="p61289">
-        <PersonName>
-          <First>Willians</First>
-          <Known>Willians</Known>
-          <Last>Domingos Fernandes</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Striker" uID="p91993">
-        <PersonName>
-          <First>Leandro Damião</First>
-          <Known>Leandro Damião</Known>
-          <Last>da Silva dos Santos</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Substitute" uID="p179163">
-        <PersonName>
-          <First>Anderson</First>
-          <Known>Pará</Known>
-          <Last>Ferreira da Silva</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Substitute" uID="p61846">
-        <PersonName>
-          <First>Manoel Messias</First>
-          <Known>Manoel</Known>
-          <Last>Silva Carvalho</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Substitute" uID="p53409">
-        <PersonName>
-          <First>Rafael</First>
-          <Known>Rafael</Known>
-          <Last>Pires Monteiro</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Substitute" uID="p95712">
-        <PersonName>
-          <First>Felipe</First>
-          <Last>Seymour</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Substitute" uID="p102458">
-        <PersonName>
-          <First>Duvier</First>
-          <Last>Riascos</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Substitute" uID="p162760">
-        <PersonName>
-          <First>Jose Henrique</First>
-          <Known>Henrique Dourado</Known>
-          <Last>da Silva Dourado</Last>
-        </PersonName>
-      </Player>
-      <Player Position="Substitute" uID="p168786">
-        <PersonName>
-          <First>Gabriel Augusto</First>
-          <Known>Gabriel Xavier</Known>
-          <Last>Xavier</Last>
-        </PersonName>
-      </Player>
-      <TeamOfficial Type="Manager" uID="man40846">
+      <Player Position="Midfielder" uID="p94425">
         <PersonName>
           <First>Marcelo</First>
-          <Last>Oliveira</Last>
+          <Last>Brozovic</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p19801">
+        <PersonName>
+          <First>Felipe</First>
+          <Last>Melo</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Striker" uID="p20153">
+        <PersonName>
+          <First>Rodrigo</First>
+          <Last>Palacio</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Striker" uID="p28502">
+        <PersonName>
+          <First>Éder</First>
+          <Known>Éder</Known>
+          <Last>Citadin Martins</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Striker" uID="p50442">
+        <PersonName>
+          <First>Stevan</First>
+          <Last>Jovetic</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p55604">
+        <PersonName>
+          <First>Davide</First>
+          <Last>Santon</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p78407">
+        <PersonName>
+          <First>Yuto</First>
+          <Last>Nagatomo</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p173033">
+        <PersonName>
+          <First>Enrico</First>
+          <Last>Baldini</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p178885">
+        <PersonName>
+          <First>Fabio</First>
+          <Last>Della Giovanna</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p192294">
+        <PersonName>
+          <First>Mattia</First>
+          <Last>Bonetto</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p194827">
+        <PersonName>
+          <First>Rey</First>
+          <Last>Manaj</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p199829">
+        <PersonName>
+          <First>Assane Demoya</First>
+          <Last>Gnoukouri</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p204222">
+        <PersonName>
+          <First>José</First>
+          <Last>Correia</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p41293">
+        <PersonName>
+          <First>Jonathan</First>
+          <Last>Biabiany</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p215531">
+        <PersonName>
+          <First>Ionut</First>
+          <Last>Radu</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p220874">
+        <PersonName>
+          <First>Bright</First>
+          <Last>Gyamfi</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p225776">
+        <PersonName>
+          <First>Senna</First>
+          <Last>Miangue</Last>
+        </PersonName>
+      </Player>
+      <TeamOfficial Type="Manager" uID="man96">
+        <PersonName>
+          <First>Roberto</First>
+          <Last>Mancini</Last>
         </PersonName>
       </TeamOfficial>
     </Team>
-    <Venue uID="v3703">
-      <Country>Copa Libertadores</Country>
-      <Name>Tomás Adolfo Ducó</Name>
+    <Venue uID="v2262">
+      <Country>Italy</Country>
+      <Name>MAPEI Stadium - Città del Tricolore</Name>
     </Venue>
   </SoccerDocument>
 </SoccerFeed>';
@@ -359,7 +414,8 @@
     $data = array('x-meta-feed-type: F7', 'x-meta-feed-parameters: feed params', 'x-meta-default-filename: filename.xml', 'x-meta-game-id: 1', 'x-meta-competition-id: 1', 'x-meta-season-id: 2010', 'x-meta-game-id: ', 'x-meta-gamesystem-id: 1', 'x-meta-matchday: 1', 'x-meta-away-team-id: 1', 'x-meta-home-team-id: 1', 'x-meta-game-status: 11', 'x-meta-language: en', 'x-meta-production-server: server', 'x-meta-production-server-timestamp: 1', 'x-meta-production-server-module: 1', 'x-meta-mime-type: text/xml', 'encoding: UTF-8'); 
 
 //set URL 
-    $url = 'http://campfin.newsdev.net/euro/2016/create/'; 
+    // $url = 'http://campfin.newsdev.net/euro/2016/create/'; 
+    $url = 'http://127.0.0.1:8000/euro/2016/create/'; 
 
 // Get the curl session object
     $session = curl_init($url); 
