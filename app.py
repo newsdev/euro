@@ -23,7 +23,7 @@ def all_gameids(tournament, year):
 @app.route('/<tournament>/<year>/file/<filetype>.xml', methods=['GET'])
 def xml_file(tournament, year, filetype):
     xml_files = glob.glob('%s/%s-*-%s-%s.xml' % (utils.DATA_DIR, filetype, year, tournament))
-    files = sorted(xml_files, key=lambda x:x.split('-')[1])
+    files = sorted(xml_files, key=lambda x:x.split('-')[1], reverse=True)
     if len(files) > 0:
         with open(files[0], 'r') as readfile:
             return Response(readfile.read(), mimetype="text/xml")
@@ -33,7 +33,7 @@ def xml_file(tournament, year, filetype):
 @app.route('/<tournament>/<year>/file/<filetype>.json', methods=['GET'])
 def json_file(tournament, year, filetype):
     json_files = glob.glob('%s/%s-*-%s-%s-processed.json' % (utils.DATA_DIR, filetype, year, tournament))
-    files = sorted(json_files, key=lambda x:x.split('-')[1])
+    files = sorted(json_files, key=lambda x:x.split('-')[1], reverse=True)
     if len(files) > 0:
         with open(files[0], 'r') as readfile:
             return Response(readfile.read(), mimetype="application/json")
@@ -43,7 +43,7 @@ def json_file(tournament, year, filetype):
 @app.route('/<tournament>/<year>/game/<gameid>.xml', methods=['GET'])
 def latest_xml(tournament, year, gameid):
     xml_files = glob.glob('%s/*-%s-%s-%s.xml' % (utils.DATA_DIR, gameid, year, tournament))
-    files = sorted(xml_files, key=lambda x:x.split('-')[1])
+    files = sorted(xml_files, key=lambda x:x.split('-')[1], reverse=True)
     if len(files) > 0:
         with open(files[0], 'r') as readfile:
             return Response(readfile.read(), mimetype="text/xml")
@@ -53,7 +53,7 @@ def latest_xml(tournament, year, gameid):
 @app.route('/<tournament>/<year>/game/<gameid>.json', methods=['GET'])
 def latest_json(tournament, year, gameid):
     json_files = glob.glob('%s/*-%s-%s-%s-processed.json' % (utils.DATA_DIR, gameid, year, tournament))
-    files = sorted(json_files, key=lambda x:x.split('-')[1])
+    files = sorted(json_files, key=lambda x:x.split('-')[1], reverse=True)
     if len(files) > 0:
         print files[0]
         with open(files[0], 'r') as readfile:
