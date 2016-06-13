@@ -42,7 +42,7 @@ def json_file(tournament, year, filetype):
 
 @app.route('/<tournament>/<year>/game/<gameid>.xml', methods=['GET'])
 def latest_xml(tournament, year, gameid):
-    xml_files = glob.glob('%s/*-%s-%s-%s.xml' % (utils.DATA_DIR, gameid, year, tournament))
+    xml_files = glob.glob('%s/F7-*-%s-%s-%s.xml' % (utils.DATA_DIR, gameid, year, tournament))
     files = sorted(xml_files, key=lambda x:x.split('-')[1], reverse=True)
     if len(files) > 0:
         with open(files[0], 'r') as readfile:
@@ -52,7 +52,7 @@ def latest_xml(tournament, year, gameid):
 
 @app.route('/<tournament>/<year>/game/<gameid>.json', methods=['GET'])
 def latest_json(tournament, year, gameid):
-    json_files = glob.glob('%s/*-%s-%s-%s-processed.json' % (utils.DATA_DIR, gameid, year, tournament))
+    json_files = glob.glob('%s/F7-*-%s-%s-%s-processed.json' % (utils.DATA_DIR, gameid, year, tournament))
     files = sorted(json_files, key=lambda x:x.split('-')[1], reverse=True)
     if len(files) > 0:
         print files[0]
